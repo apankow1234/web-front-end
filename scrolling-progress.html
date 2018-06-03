@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Scroll Progress</title>
+	<style type="text/css">
+		:root {
+			--color-range-empty: #ccc;
+			--color-range-progress: linear-gradient( to right,
+				hsl(120, var(--scroll), 50%) var(--scroll),
+				var(--color-range-empty) 0);
+			--progress-height: 1em;
+		}
+		body {
+			width: 100vw;
+			height: 100vh;
+			margin: auto;
+			padding: 0;
+			text-align: center;
+			vertical-align: middle;
+		}
+		h1 {
+			margin: auto;
+		}
+		section, div {
+			margin: auto;
+			width: 33%;
+		}
+		.scrollable {
+			text-align: left;
+			height: calc(50% - var(--progress-height));
+			overflow: scroll;
+		}
+		.progress {
+			height: var(--progress-height);
+			background: var(--color-range-progress);
+		}
+	</style>
+</head>
+<body>
+	<h1>Scrolling</h1>
+	<section class="scrollable">
+		<h1>Lorem Ipsum</h1>
+		<p>Lorem ipsum dolor sit amet, rebum liber ornatus et sea, mea imperdiet complectitur an. Ne sit fugit scaevola maiestatis, qui debitis vocibus cu, vim an lorem feugait. Vim quot liber rationibus cu. Iusto abhorreant ut duo. Ex nemore virtute lobortis his, ea eos sint tation molestie. Vis inani soluta ex, vis an dolorum singulis.</p>
+		<p>Qui ad cibo evertitur. Pro habeo imperdiet euripidis ne, an duo decore oportere, dictas pericula conceptam id per. Accumsan comprehensam no eam. Nominavi principes incorrupte et nam. Quo et commodo aliquid scriptorem.</p>
+		<p>Quo laudem malorum sapientem at, quem tibique at mel. Sea possim virtute expetenda in, id eam atqui sensibus intellegebat, quo corpora nominavi id. Eos commune periculis democritum ex. Eu etiam vidisse constituto vim.</p>
+		<p>Eam verear principes id, fastidii probatus recteque ea cum. In vis nisl lucilius, mel ad autem essent perpetua. Ex eius prompta alienum his, ea nam tritani dissentiet. Vel in meliore sensibus. Eu vel quem copiosae efficiendi, et commodo eligendi necessitatibus pro. Ex cibo platonem evertitur usu, nostro tacimates prodesset mei et. Facete omnesque quaestio et eos, dicant exerci quaestio vix cu.</p>
+		<p>Stet summo atomorum mel no, eum cu nulla debitis, nemore sensibus at mel. Est et quem reque. No volumus assueverit nec, cu recusabo salutatus pri. Ex quaestio maiestatis cum, ex sit idque dolores. At per graecis molestiae, sit at propriae pertinacia, usu ea amet hinc assum.</p>
+		<h1>Lorem Ipsum</h1>
+		<p>Lorem ipsum dolor sit amet, rebum liber ornatus et sea, mea imperdiet complectitur an. Ne sit fugit scaevola maiestatis, qui debitis vocibus cu, vim an lorem feugait. Vim quot liber rationibus cu. Iusto abhorreant ut duo. Ex nemore virtute lobortis his, ea eos sint tation molestie. Vis inani soluta ex, vis an dolorum singulis.</p>
+		<p>Qui ad cibo evertitur. Pro habeo imperdiet euripidis ne, an duo decore oportere, dictas pericula conceptam id per. Accumsan comprehensam no eam. Nominavi principes incorrupte et nam. Quo et commodo aliquid scriptorem.</p>
+		<p>Quo laudem malorum sapientem at, quem tibique at mel. Sea possim virtute expetenda in, id eam atqui sensibus intellegebat, quo corpora nominavi id. Eos commune periculis democritum ex. Eu etiam vidisse constituto vim.</p>
+		<p>Eam verear principes id, fastidii probatus recteque ea cum. In vis nisl lucilius, mel ad autem essent perpetua. Ex eius prompta alienum his, ea nam tritani dissentiet. Vel in meliore sensibus. Eu vel quem copiosae efficiendi, et commodo eligendi necessitatibus pro. Ex cibo platonem evertitur usu, nostro tacimates prodesset mei et. Facete omnesque quaestio et eos, dicant exerci quaestio vix cu.</p>
+		<p>Stet summo atomorum mel no, eum cu nulla debitis, nemore sensibus at mel. Est et quem reque. No volumus assueverit nec, cu recusabo salutatus pri. Ex quaestio maiestatis cum, ex sit idque dolores. At per graecis molestiae, sit at propriae pertinacia, usu ea amet hinc assum.</p>
+	</section>
+	<div class="progress"></div>
+
+	<script type="text/javascript">
+		var root = document.documentElement;
+		var el = document.getElementsByClassName("scrollable")[0];
+		el.addEventListener("scroll",function(){
+			let scrollFraction = el.scrollTop / (el.scrollHeight - el.offsetHeight);
+			root.style.setProperty("--scroll", parseInt(scrollFraction*100)+"%");
+		});
+	</script>
+
+</body>
+</html>

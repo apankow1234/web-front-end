@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>SVG Interaction</title>
+	<style type="text/css">
+		svg {
+			background-color: purple;
+			fill: white;
+		}
+		.left-iris, .right-iris {
+			fill: skyblue;
+			cy: calc(25px + (50px * var(--mouse-y)));
+			cx: calc(25px + (50px * var(--mouse-x)));
+		}
+	</style>
+</head>
+<body>
+
+	<svg viewbox="0 0 250 100">
+		<clipPath id="white-clip">
+			<path id="white-path" d="M1,50  a65,80 0 0,1 100,0 a80,80 0 0,1 -100,0 Z">
+		</clipPath>
+		<use id="eye-white" href="#white-path"></use>
+		<use href="#eye-white" x="148"></use>
+		<circle id="iris" class="left-iris" cx="50" cy="45" r="18" clip-path="url(#white-clip)"></circle>
+		<use class="right-iris" href="#iris" x="148"></use>
+	</svg>
+
+	<script type="text/javascript">
+		var root = document.documentElement;
+		document.addEventListener("mousemove", evt => {
+			let x = evt.clientX / innerWidth;
+			let y = evt.clientY / innerHeight;
+			root.style.setProperty("--mouse-x",x);
+			root.style.setProperty("--mouse-y",y);
+		});
+	</script>
+
+</body>
+</html>
