@@ -11,14 +11,14 @@
 
 ### Scroll Progress
 
-[Live Version](https://apankow1234.github.io/web-front-end/custom-timer.html)
+[Live Version](https://apankow1234.github.io/web-front-end/scrolling-progress.html)
 
 ![Scroll Progress](screenshots/scrolling-progress-01.png "Scrolling Progress 01")
 ![Scroll Progress](screenshots/scrolling-progress-02.png "Scrolling Progress 02")
 
 ### Custom Timer (Up and Down)
 
-[Live Version](https://apankow1234.github.io/web-front-end/scrub-bar.html)
+[Live Version](https://apankow1234.github.io/web-front-end/custom-timer.html)
 
 ![Custom Timer](screenshots/custom-timer-up.png "Custom Timer Up")
 ![Custom Timer](screenshots/custom-timer-down.png "Custom Timer Down")
