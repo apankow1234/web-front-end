@@ -17,21 +17,15 @@ function printClockFmt(totalSeconds=0)
 	var timeString = "";
 	for(var i = iter; i >= 0; i--)
 	{	
-    	var calc = Math.floor(totalSeconds / _toSeconds[i]);
-    	var stringPiece = String(calc);
-    	if(i != iter)
+		var calc = Math.floor(totalSeconds / _toSeconds[i]);
+		var stringPiece = String(calc);
+		if(i != iter)
 		{
-    		stringPiece = String(Math.floor(calc % _toNext[i])|0);
-    		let proper = String(_toNext[i]).length;
-    		while(stringPiece.length > proper)
-    		{
-    			stringPiece = stringPiece.substr(1);
-    		}
-    		while(stringPiece.length < proper)
-    		{
-    			stringPiece = "0"+stringPiece;
-    		}
-    	}
+			stringPiece = String(Math.floor(calc % _toNext[i])|0);
+			let proper = String(_toNext[i]).length;
+			while(stringPiece.length > proper) stringPiece = stringPiece.substr(1);
+			while(stringPiece.length < proper) stringPiece = "0"+stringPiece;
+		}
 		timeString += stringPiece;
 		if(i != 0) timeString += ":";
 	}
